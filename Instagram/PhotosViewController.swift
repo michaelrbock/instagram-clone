@@ -18,6 +18,10 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 320
+
         let clientId = "e05c462ebd86446ea48a5af73769b602"
         let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
         let request = NSURLRequest(URL: url!)
@@ -34,22 +38,22 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                         data, options:[]) as? NSDictionary {
                             // NSLog("response: \(responseDictionary)")
                             self.mediaArray = responseDictionary["data"] as! [NSDictionary]
-                            NSLog("\(self.mediaArray)")
+                            //NSLog("\(self.mediaArray)")
                             self.tableView.reloadData()
                     }
                 }
         });
         task.resume()
-
-        tableView.rowHeight = 320
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("photoCell") as! PhotoPrototypeTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("com.michaelrbock.photocell") as! PhotoTableViewCell
+
+        print("here")
 
         if let images = self.mediaArray[indexPath.row]["images"] as? [String: AnyObject] {
-            if let standard_resolution = images["standard_resolution"] as? [String: AnyObject] {
-                if let url = standard_resolution["url"] as? String {
+            if let low_resolution = images["low_resolution"] as? [String: AnyObject] {
+                if let url = low_resolution["url"] as? String {
                     cell.photoImageView.setImageWithURL(NSURL(string: url)!)
                 }
             }

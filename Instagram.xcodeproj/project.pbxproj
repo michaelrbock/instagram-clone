@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22551CDA1C63057E00353336 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22551CD91C63057E00353336 /* PhotoTableViewCell.swift */; };
 		226771E11C62F76600D5F856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226771E01C62F76600D5F856 /* AppDelegate.swift */; };
 		226771E31C62F76600D5F856 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226771E21C62F76600D5F856 /* PhotosViewController.swift */; };
 		226771E61C62F76600D5F856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226771E41C62F76600D5F856 /* Main.storyboard */; };
 		226771E81C62F76600D5F856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226771E71C62F76600D5F856 /* Assets.xcassets */; };
 		226771EB1C62F76600D5F856 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226771E91C62F76600D5F856 /* LaunchScreen.storyboard */; };
-		226771F31C62FE8200D5F856 /* PhotoPrototypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226771F21C62FE8200D5F856 /* PhotoPrototypeTableViewCell.swift */; };
 		7B20471942BB5FDB7C78D34D /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4ABB1E9964423AD48E27BD /* Pods_Instagram.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22551CD91C63057E00353336 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		226771DD1C62F76600D5F856 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226771E01C62F76600D5F856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		226771E21C62F76600D5F856 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
@@ -24,7 +25,6 @@
 		226771E71C62F76600D5F856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		226771EA1C62F76600D5F856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226771EC1C62F76600D5F856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		226771F21C62FE8200D5F856 /* PhotoPrototypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPrototypeTableViewCell.swift; sourceTree = "<group>"; };
 		2E4ABB1E9964423AD48E27BD /* Pods_Instagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		405396B98FA8EFD21C8AA0A1 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 		5D8DFD9EFD620C68BA923976 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 				226771E01C62F76600D5F856 /* AppDelegate.swift */,
 				226771E21C62F76600D5F856 /* PhotosViewController.swift */,
 				226771E41C62F76600D5F856 /* Main.storyboard */,
-				226771F21C62FE8200D5F856 /* PhotoPrototypeTableViewCell.swift */,
+				22551CD91C63057E00353336 /* PhotoTableViewCell.swift */,
 				226771E71C62F76600D5F856 /* Assets.xcassets */,
 				226771E91C62F76600D5F856 /* LaunchScreen.storyboard */,
 				226771EC1C62F76600D5F856 /* Info.plist */,
@@ -216,7 +216,7 @@
 			files = (
 				226771E31C62F76600D5F856 /* PhotosViewController.swift in Sources */,
 				226771E11C62F76600D5F856 /* AppDelegate.swift in Sources */,
-				226771F31C62FE8200D5F856 /* PhotoPrototypeTableViewCell.swift in Sources */,
+				22551CDA1C63057E00353336 /* PhotoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

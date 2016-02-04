@@ -1,5 +1,5 @@
 //
-//  PhotoPrototypeTableViewCell.swift
+//  PhotoTableViewCell.swift
 //  Instagram
 //
 //  Created by Michael Bock on 2/3/16.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class PhotoPrototypeTableViewCell: UITableViewCell {
+class PhotoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var photoLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

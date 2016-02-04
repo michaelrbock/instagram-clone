@@ -13,6 +13,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
 
+    var refreshControl = UIRefreshControl()
     var mediaArray: [NSDictionary] = []
 
     override func viewDidLoad() {
@@ -22,13 +23,21 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.rowHeight = 320
 
+        refreshControl.addTarget(self, action: "fetchPhotos", forControlEvents: UIControlEvents.ValueChanged)
+
+        tableView.insertSubview(refreshControl, atIndex: 0)
+
+        fetchPhotos()
+    }
+
+    func fetchPhotos() {
         let clientId = "e05c462ebd86446ea48a5af73769b602"
         let url = NSURL(string:"https://api.instagram.com/v1/media/popular?client_id=\(clientId)")
         let request = NSURLRequest(URL: url!)
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
             delegate:nil,
-            delegateQueue:NSOperationQueue.mainQueue()
+            delegateQueue: NSOperationQueue.mainQueue()
         )
 
         let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
@@ -36,10 +45,11 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 if let data = dataOrNil {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
-                            // NSLog("response: \(responseDictionary)")
+
                             self.mediaArray = responseDictionary["data"] as! [NSDictionary]
-                            //NSLog("\(self.mediaArray)")
+
                             self.tableView.reloadData()
+                            self.refreshControl.endRefreshing()
                     }
                 }
         });
@@ -51,13 +61,9 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
 
         print("here")
 
-        if let images = self.mediaArray[indexPath.row]["images"] as? [String: AnyObject] {
-            if let low_resolution = images["low_resolution"] as? [String: AnyObject] {
-                if let url = low_resolution["url"] as? String {
-                    cell.photoImageView.setImageWithURL(NSURL(string: url)!)
-                }
-            }
-        }
+        cell.photoImageView.setImageWithURL(getPhotoUrl(indexPath.row)!)
+
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
 
         return cell
     }
@@ -66,11 +72,26 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return self.mediaArray.count
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! PhotoDetailsViewController
+        let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+        let photoUrl = getPhotoUrl(indexPath!.row)
+        vc.photoUrl = photoUrl
     }
 
-
+    func getPhotoUrl(row: Int) -> NSURL? {
+        if let images = self.mediaArray[row]["images"] as? [String: AnyObject] {
+            if let low_resolution = images["low_resolution"] as? [String: AnyObject] {
+                if let url = low_resolution["url"] as? String {
+                    return NSURL(string: url)!
+                }
+            }
+        }
+        return nil
+    }
 }
 

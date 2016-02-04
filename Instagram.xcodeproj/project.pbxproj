@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2211A04C1C63088C00695CE6 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2211A04B1C63088C00695CE6 /* PhotoDetailsViewController.swift */; };
 		22551CDA1C63057E00353336 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22551CD91C63057E00353336 /* PhotoTableViewCell.swift */; };
 		226771E11C62F76600D5F856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226771E01C62F76600D5F856 /* AppDelegate.swift */; };
 		226771E31C62F76600D5F856 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226771E21C62F76600D5F856 /* PhotosViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2211A04B1C63088C00695CE6 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		22551CD91C63057E00353336 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		226771DD1C62F76600D5F856 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226771E01C62F76600D5F856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				226771E01C62F76600D5F856 /* AppDelegate.swift */,
 				226771E21C62F76600D5F856 /* PhotosViewController.swift */,
 				226771E41C62F76600D5F856 /* Main.storyboard */,
+				2211A04B1C63088C00695CE6 /* PhotoDetailsViewController.swift */,
 				22551CD91C63057E00353336 /* PhotoTableViewCell.swift */,
 				226771E71C62F76600D5F856 /* Assets.xcassets */,
 				226771E91C62F76600D5F856 /* LaunchScreen.storyboard */,
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2211A04C1C63088C00695CE6 /* PhotoDetailsViewController.swift in Sources */,
 				226771E31C62F76600D5F856 /* PhotosViewController.swift in Sources */,
 				226771E11C62F76600D5F856 /* AppDelegate.swift in Sources */,
 				22551CDA1C63057E00353336 /* PhotoTableViewCell.swift in Sources */,
